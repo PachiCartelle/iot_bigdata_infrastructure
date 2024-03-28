@@ -7,7 +7,7 @@
 Clone the repository
 
 ```
-git clone XXX
+git clone https://github.com/PachiCartelle/iot_bigdata_infrastructure.git
 ```
 
 The code downloaded contains the folder **infra-iot**, so we cd inside it
