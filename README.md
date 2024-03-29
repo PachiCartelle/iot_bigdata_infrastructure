@@ -122,13 +122,13 @@ InfluxDB Details Token: YOUR INFLUXDB TOKEN
 
 InfluxDB Details Default Bucket: YOUR BUCKET NAME
 
-<img src="images/screeshot_grafana_configure_datasource_influxdb.png" alt="InfluxDB configuration in Grafana" width="60%">
+<img src="images/screenshot_grafana_configure_datasource_influxdb.png" alt="InfluxDB configuration in Grafana" width="80%">
 
 , and click **Save & Test** button.
 
 If we have confirmation like this:
 
-<img src="images/screeshot_confirmation_grafana.png" alt="Confirmation of InfluxDB connection with Grafana" width="100%">
+<img src="images/screenshot_confirmation_grafana.png" alt="Confirmation of InfluxDB connection with Grafana" width="100%">
 
 , interaction between **influxdb** and **grafana** is configured and we can visualize the **streamed sensor data in grafana**.
 
