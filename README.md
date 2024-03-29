@@ -1,8 +1,29 @@
 
+## IOT BIG DATA INFRASTRUCTURE
+
+### Table of contents-index
+
+- [Introduction](#intro)
+- [Components of the system](#components)
+- [Docker images](#docker)
+- [Installation](#installation)
+- [Downloading the influxdb database](#downloading_database)
+- [Closing the system](#closing)
 
 
+### Introduction <a name='intro'></a>
 
-### Instalation
+
+### Components of the system <a name='components'></a>
+
+IMAGEN DEL ESQUEMA DEL SISTEMA
+
+### Docker images <a name='docker'></a>
+
+For all of these components we have vailable inside 
+
+
+### Installation and system running <a name='installation'></a>
 
 Clone the repository
 
@@ -31,6 +52,11 @@ Then, we need to run the mosquitto, telegraf, influxdb and grafana Docker contai
 ```
 $ sudo docker-compose up -d
 ```
+
+, and we obtain one container running for each one of the elements of our system: mosquitto, telegraf, influxdb and grafana:
+
+<img src="images/containers.png" alt="systems container running" width="70%">
+
 
 After that, we need to get the **influxdb token**, so we enter in our browser [http://localhost:8086/](http://localhost:8086/)
 
@@ -122,7 +148,7 @@ InfluxDB Details Token: YOUR INFLUXDB TOKEN
 
 InfluxDB Details Default Bucket: YOUR BUCKET NAME
 
-<img src="images/screenshot_grafana_configure_datasource_influxdb.png" alt="InfluxDB configuration in Grafana" width="80%">
+<img src="images/screenshot_grafana_configure_datasource_influxdb.png" alt="InfluxDB configuration in Grafana" width="100%">
 
 , and click **Save & Test** button.
 
@@ -140,7 +166,48 @@ For this example, we are going to use a previous configured Dashboard, so in the
 
 , and upload the **dashboard_workcenter.json** file from our repository.
 
-The final output of the Dashboard is:
+The final **output of the Dashboard** is:
 
 <img src="images/grafana_dashboard.png" alt="Workcenter Grafana Dashboard" width="100%">
+
+
+### Downloading the influx database <a name='downloading_database'></a>
+
+For downloading the influxdb database from the influxdb running container, we need to enter in influxdb container:
+
+```
+$ sudo docker exec -it infra_iot-influxdb-1 /bin/bash
+```
+
+, then we have to export the database to a csv file with the command:
+
+
+```
+# influx query 'from(bucket: "YOUR BUCKET NAME") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "mqtt_consumer" and (r._field == "temperature" or r._field == "humidity" or r._field == "presence" or r._field == "light"))' --org "YOUR ORG NAME" --token "YOUR INGLUXDB TOKEN" --raw > influxdb_data.csv
+```
+
+, then exit the container
+
+```
+# exit
+```
+
+, and copy the **influxdb_data.csv** file in local
+
+```
+$ sudo docker cp INFLUXDB_ID_CONTAINER:/influxdb_data.csv .
+```
+
+, we can visualize some rows of the database:
+
+<img src="images/influxdb_csv_database.png" alt="influxdb database" width="100%">
+
+
+### Closing the system <a name='closing'></a>
+
+In case we want to close the system and delete all containers, we should type in terminal:
+
+```
+$ sudo docker-compose down
+```
 
