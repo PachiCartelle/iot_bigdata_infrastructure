@@ -9,7 +9,7 @@
 - [Installation](#installation)
 - [Downloading the influxdb database](#downloading_database)
 - [Closing the system](#closing)
-- [Next steps](#next-steps)
+- [Next steps](#next_steps)
 
 
 ### Introduction <a name='intro'></a>
