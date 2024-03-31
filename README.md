@@ -44,7 +44,7 @@ The IoT Big Data System has the next components:
 
 The relation between these components is showed in the next schema:
 
-<img src="images/.png" alt="systems container running" width="70%">
+<img src="images/infrastructure_architecture.png" alt="infrastructure architecture schema" width="70%">
 
 
 ### Docker images and code<a name='docker'></a>
@@ -281,4 +281,5 @@ The next obvious step is using real data from real sensors inside this system, t
 
 <img src="images/iot_sensor_running.png" alt="IoT sensor prototype running" width="80%">
 
-Next steps are applying this system to another **Digital Twins** domains with different data and exploring all the representation and displaying possibilities of Grafana.
+
+Next steps will be applying this system to another **Digital Twins** domains with different data and exploring all the representation and displaying possibilities of Grafana.
