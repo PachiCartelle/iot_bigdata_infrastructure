@@ -44,7 +44,7 @@ The IoT Big Data System has the next components:
 
 The relation between these components is showed in the next schema:
 
-<img src="images/infrastructure_architecture.png" alt="infrastructure architecture schema" width="70%">
+<img src="images/infrastructure_architecture.png" alt="infrastructure architecture schema" width="100%">
 
 
 ### Docker images and code<a name='docker'></a>
