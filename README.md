@@ -90,7 +90,7 @@ git clone https://github.com/PachiCartelle/iot_bigdata_infrastructure.git
 The code downloaded contains the folder **infra-iot**, so we cd inside it
 
 ```
-$ cd infra-iot
+$ cd infra_iot
 ```
 
 Then, there we have the **grafana-data** and **influxdb-data** folders.
